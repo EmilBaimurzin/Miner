@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/BasicText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/bg_dialogs"
+        android:padding="16dp"
+        android:text="@string/rule_lives"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_dialogs"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" >
+
+
+        <ImageView
+            android:src="@drawable/img_rock"
+            android:id="@+id/imgRock"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgPaper"
+            android:layout_width="80dp"
+            android:layout_marginTop="12dp"
+            android:layout_height="80dp"
+            android:src="@drawable/img_paper"
+            app:layout_constraintEnd_toStartOf="@+id/imgRock"
+            app:layout_constraintTop_toBottomOf="@+id/imgRock" />
+
+        <ImageView
+            android:id="@+id/imgScissors"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/img_scissors"
+            app:layout_constraintStart_toEndOf="@+id/imgRock"
+            app:layout_constraintTop_toBottomOf="@+id/imgRock" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="@+id/imgPaper"
+            app:layout_constraintEnd_toStartOf="@+id/imgScissors"
+            app:layout_constraintStart_toEndOf="@+id/imgPaper"
+            app:layout_constraintTop_toTopOf="@+id/imgPaper" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:rotation="220"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="@+id/imgRock"
+            app:layout_constraintStart_toEndOf="@+id/imgRock"
+            app:layout_constraintTop_toBottomOf="@+id/imgRock" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:rotation="135"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="@+id/imgRock"
+            app:layout_constraintEnd_toStartOf="@+id/imgRock"
+            app:layout_constraintTop_toBottomOf="@+id/imgRock" />
+
+
+        <TextView
+            style="@style/BasicText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rps_game"
+            android:layout_marginTop="12dp"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgPaper" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

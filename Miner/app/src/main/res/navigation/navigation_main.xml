@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_main.xml"
+    app:startDestination="@id/fragmentMenu">
+
+    <fragment
+        android:id="@+id/fragmentMenu"
+        android:name="com.gonzup.upslt.game.menu.FragmentGameMenu"
+        android:label="FragmentMenu" >
+        <action
+            app:enterAnim="@anim/enter_animation"
+            app:exitAnim="@anim/exit_animation"
+            app:popEnterAnim="@anim/pop_enter_animation"
+            app:popExitAnim="@anim/pop_exit_animation"
+            android:id="@+id/action_fragmentMenu_to_fragmentSettings"
+            app:destination="@id/fragmentSettings" />
+        <action
+            app:enterAnim="@anim/enter_animation"
+            app:exitAnim="@anim/exit_animation"
+            app:popEnterAnim="@anim/pop_enter_animation"
+            app:popExitAnim="@anim/pop_exit_animation"
+            android:id="@+id/action_fragmentMenu_to_fragmentRules"
+            app:destination="@id/fragmentRules" />
+        <action
+            app:enterAnim="@anim/enter_animation"
+            app:exitAnim="@anim/exit_animation"
+            app:popEnterAnim="@anim/pop_enter_animation"
+            app:popExitAnim="@anim/pop_exit_animation"
+            android:id="@+id/action_fragmentMenu_to_fragmentGame"
+            app:destination="@id/fragmentGame" />
+        <action
+            app:enterAnim="@anim/enter_animation"
+            app:exitAnim="@anim/exit_animation"
+            app:popEnterAnim="@anim/pop_enter_animation"
+            app:popExitAnim="@anim/pop_exit_animation"
+            android:id="@+id/action_fragmentMenu_to_fragmentRPS"
+            app:destination="@id/fragmentRPS" />
+        <action
+            android:id="@+id/action_fragmentMenu_to_dialogBonus"
+            app:destination="@id/dialogBonus" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentGame"
+        android:name="com.gonzup.upslt.game.game.FragmentGamePlay"
+        android:label="FragmentGame" >
+        <action
+            android:id="@+id/action_fragmentGame_to_dialogLose"
+            app:destination="@id/dialogLose" />
+        <action
+            app:enterAnim="@anim/enter_animation"
+            app:exitAnim="@anim/exit_animation"
+            app:popEnterAnim="@anim/pop_enter_animation"
+            app:popExitAnim="@anim/pop_exit_animation"
+            android:id="@+id/action_fragmentGame_to_wheelFragment"
+            app:destination="@id/wheelFragment" />
+        <action
+            android:id="@+id/action_fragmentGame_to_dialogChance"
+            app:destination="@id/dialogChance" />
+    </fragment>
+    <dialog
+        android:id="@+id/dialogLose"
+        android:name="com.gonzup.upslt.game.game.dialog.DialogLose"
+        android:label="DialogLose" />
+    <fragment
+        android:id="@+id/fragmentSettings"
+        android:name="com.gonzup.upslt.game.menu.components.FragmentGameSettings"
+        android:label="FragmentSettings" />
+    <fragment
+        android:id="@+id/fragmentRules"
+        android:name="com.gonzup.upslt.game.menu.components.rules.FragmentGameRules"
+        android:label="FragmentRules" />
+    <fragment
+        android:id="@+id/wheelFragment"
+        android:name="com.gonzup.upslt.game.wheel.FragmentSpinningWheel"
+        android:label="WheelFragment" >
+        <argument
+            android:name="winnings"
+            app:argType="long" />
+    </fragment>
+    <dialog
+        android:id="@+id/dialogChance"
+        android:name="com.gonzup.upslt.game.game.dialog.DialogChance"
+        android:label="DialogChance" >
+        <argument
+            android:name="winnings"
+            app:argType="long" />
+    </dialog>
+    <fragment
+        android:id="@+id/fragmentRPS"
+        android:name="com.gonzup.upslt.game.rps.FragmentRPS"
+        android:label="FragmentRPS" >
+        <argument
+            android:name="winnings"
+            app:argType="long" />
+    </fragment>
+    <dialog
+        android:id="@+id/dialogBonus"
+        android:name="com.gonzup.upslt.game.rps.DialogBonus"
+        android:label="DialogBonus" />
+</navigation>

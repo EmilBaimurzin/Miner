@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/topContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_menu_portrait">
+
+    <TextView
+        android:id="@+id/rateTextView"
+        style="@style/GameTextView"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/rateFixedView"
+        app:layout_constraintStart_toStartOf="@+id/rateFixedView"
+        app:layout_constraintTop_toBottomOf="@+id/rateFixedView" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/centerVerOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/winningsFixedView"
+        style="@style/FixedTextView"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="3dp"
+        android:text="@string/winnings"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/centerVerOut"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/rateFixedView"
+        style="@style/FixedTextView"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="6dp"
+        android:text="@string/win_rate"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/centerVerOut"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/winningsTextView"
+        style="@style/GameTextView"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/winningsFixedView"
+        app:layout_constraintStart_toStartOf="@+id/winningsFixedView"
+        app:layout_constraintTop_toBottomOf="@+id/winningsFixedView" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="380dp"
+        android:layout_height="120dp"
+        android:src="@drawable/img_logotype"
+        app:layout_constraintBottom_toTopOf="@+id/mainContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textLinearLayout" />
+
+    <LinearLayout
+        android:id="@+id/textLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/balanceTextView"
+            style="@style/GameTextView" />
+
+        <View
+            android:layout_width="6dp"
+            android:layout_height="0dp" />
+
+        <TextView
+            android:id="@+id/lastWinTextV"
+            style="@style/GameTextView" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/centerVer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/fixedDifficulty"
+            style="@style/BasicText"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:text="@string/select_difficulty"
+            app:layout_constraintEnd_toEndOf="@+id/difficultyLayout"
+            app:layout_constraintStart_toStartOf="@+id/difficultyLayout"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/difficultyLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:background="@drawable/bg_for_text"
+            android:orientation="horizontal"
+            android:padding="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fixedDifficulty">
+
+            <TextView
+                android:id="@+id/lowDifficultyText"
+                style="@style/BasicText"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_selected"
+                android:text="@string/low"
+                android:textSize="22sp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="3dp" />
+
+            <TextView
+                android:id="@+id/normalDifficultyText"
+                style="@style/BasicText"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:text="@string/medium"
+                android:textSize="22sp"
+                app:layout_constraintTop_toBottomOf="@+id/lowDifficultyText" />
+
+            <TextView
+                android:id="@+id/hardDifficultyText"
+                style="@style/BasicText"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:text="@string/high"
+                android:textSize="22sp"
+                app:layout_constraintTop_toBottomOf="@+id/normalDifficultyText" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_for_text"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/difficultyLayout"
+            app:layout_constraintTop_toBottomOf="@+id/difficultyLayout">
+
+            <TextView
+                android:id="@+id/bidTextView"
+                style="@style/BasicText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:paddingEnd="1dp"
+                android:paddingBottom="3dp"
+                android:textSize="20sp"
+                tools:text="5000" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/coinAnim"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/coin" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_marginStart="6dp"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_for_text"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="@+id/difficultyLayout"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout2" >
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/bidSlider"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                app:thumbColor="@color/text_color"
+                app:trackColorInactive="#a0FFFFFF"
+                app:trackColorActive="#ffffff"
+                android:layout_marginHorizontal="12dp"
+                android:valueFrom="0"
+                android:layout_height="wrap_content"/>
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/gameRV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.gonzup.upslt.game.other.CustomButton
+        android:id="@+id/collectButton"
+        style="@style/MenuButtons"
+        android:layout_width="260dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/custom_font"
+        android:text="@string/collect"
+        android:textColor="@color/text_color"
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameRV" />
+
+    <com.gonzup.upslt.game.other.CustomButton
+        android:id="@+id/betButton"
+        style="@style/BasicText"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="12dp"
+        android:background="@drawable/bg_classic_button"
+        android:text="@string/confirm"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/centerVerticalOut" />
+
+    <com.gonzup.upslt.game.other.CustomButton
+        android:id="@+id/backButton"
+        style="@style/BasicText"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="12dp"
+        android:background="@drawable/bg_classic_button"
+        android:text="@string/back_to_menu"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/centerVerticalOut"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/centerVerticalOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

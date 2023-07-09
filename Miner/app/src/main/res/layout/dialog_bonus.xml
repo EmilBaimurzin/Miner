@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialogs">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="350dp"
+        android:layout_height="250dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/balanceTextView"
+                style="@style/BasicText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                tools:text="5000" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/coinAnim"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/coin" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/BasicText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:text="@string/the_one_round_of_bonus_game_has_a_price"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/close_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+        <com.gonzup.upslt.game.other.CustomButton
+            android:id="@+id/close_button"
+            style="@style/BasicText"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_margin="12dp"
+            android:text="Close"
+            android:textSize="20sp"
+            android:background="@drawable/bg_classic_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/verticalLine"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.gonzup.upslt.helpful.CustomLayoutButton
+            android:id="@+id/startButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/bg_classic_button"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/verticalLine">
+
+            <TextView
+                android:id="@+id/play_button"
+                style="@style/BasicText"
+                android:layout_marginStart="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="Start 300" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/coinAnim2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/coin" />
+
+        </com.gonzup.upslt.helpful.CustomLayoutButton>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
