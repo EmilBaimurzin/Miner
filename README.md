@@ -1,3 +1,3 @@
 # Miner
 
-![Preview](https://github.com/EmilBaimurzin/Pairs/blob/main/photo1687515844.jpeg)
+![Preview](https://github.com/EmilBaimurzin/Miner/blob/main/photo1687327537.jpeg)
